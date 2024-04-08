@@ -1,2 +1,3 @@
-# Laboratorio_S206
-S206 - Disciplina de Qualidade de Software
+# S206 - Qualidade de Software
+
+ Repositório para registro de relatórios e exercícios desenvolvidos nas aulas.
