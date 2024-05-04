@@ -10,7 +10,7 @@ Projeto desenvolvido para realizar a testes de UI no website [Todo.MVC](https://
 <img align="center" alt="picture" width="500em" src="https://github.com/Izalp/Izalp/assets/102091381/7d46528e-2c50-45e9-a0f3-3a3fbbb9e24b">
 
 ## Sumário:
-1. [Cenário de teste](#cenário-de-teste-🎯)
+1. [Cenário de teste](#cenário-de-teste)
 2. [Testes realizados](#testes-realizados)
 3. [Pré-requisitos](#pré-requisitos)
 4. [Como executar](#como-executar)
