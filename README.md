@@ -17,11 +17,11 @@ Projeto desenvolvido para realizar a testes de UI no website [Todo.MVC](https://
 4. [Como Executar](#como-executar)
 5. [Relatório de Testes](#relatório-de-testes)
 
-## Cenário de Teste 🎯
+## Cenário de Teste 
 
 O objetivo é testar as funcionalidades do website [Todo.MVC](https://todomvc.com/examples/react/dist/), incluindo adicionar uma nova tarefa, remover tarefas, marcar tarefas como concluídas, marcar todas as tarefas como concluídas, limpar tarefas concluídas e filtrar tarefas.
 
-## Testes realizados 🚀
+## Testes Realizados
 
 #### Teste para adcionar uma nova tarefa:
 
@@ -164,13 +164,13 @@ cy.get('[data-testid="text-input"]').type('{enter}')
 cy.get('[data-testid="todo-item-label"]').should('not.exist')
 ```
 
-## Pré-requisitos ✅
+## Pré-Requisitos 
 
 - Instalar o Nodejs
 
 Link para download direto: https://nodejs.org/en/download
 
-## Como executar 💻
+## Como Executar 
 
 1. Clone este repositório na sua máquina;
 2. Instalar o Cypress pela linha de comando:
@@ -184,7 +184,7 @@ npm install cypress
 ./node_modules/.bin/cypress open
 ```
 
-## Relatório de testes 📋
+## Relatório de Testes 
 
 Para gerar o relatório de testes pelo Mochawesome:
 
