@@ -17,11 +17,11 @@ Projeto desenvolvido para realizar a testes de UI no website [Todo.MVC](https://
 4. [Como Executar](#como-executar)
 5. [Relatório de Testes](#relatório-de-testes)
 
-### Cenário de Teste 🎯
+## Cenário de Teste 🎯
 
 O objetivo é testar as funcionalidades do website [Todo.MVC](https://todomvc.com/examples/react/dist/), incluindo adicionar uma nova tarefa, remover tarefas, marcar tarefas como concluídas, marcar todas as tarefas como concluídas, limpar tarefas concluídas e filtrar tarefas.
 
-### Testes realizados 🚀
+## Testes realizados 🚀
 
 #### Teste para adcionar uma nova tarefa:
 
