@@ -28,7 +28,7 @@ O objetivo é testar as funcionalidades do website [Todo.MVC](https://todomvc.co
 2. Localiza o campo de texto onde as tarefas podem ser inseridas utilizando `cy.get()` e adiciona uma nova tarefa utilizando `.type()`
 3. Verifica se o contador de itens restantes exibe '1 item left!' utilizando `.should()`
 
-Aqui está o código desenvolvido para adicionar uma nova tarefa:
+Aqui está o código desenvolvido para realizar o teste para adicionar uma nova tarefa:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -46,7 +46,7 @@ cy.get('[data-testid="footer"]').should('contain.text','1 item left!')
 4. Localiza o botão de remoção da tarefa na página pelo `.find()` e clica no botão utilizando `.click()`
 5. Verifica se a tarefa removida não está mais presente na lista usando `.should()`
 
-Aqui está o código desenvolvido para remoção de tarefas:
+Aqui está o código desenvolvido para teste de remoção de tarefas:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -69,7 +69,7 @@ cy.get('[data-testid="todo-item-label"]').should('not.exist')
 7. Verifica se o contador de itens restantes exibe '0 items left!' utilizando `.should()`
 8. Verifica se a tarefa concluída está presente na lista de tarefas concluídas usando `.should()`
 
-Aqui está o código desenvolvido para marcação de tarefa concluída:
+Aqui está o código desenvolvido para teste de marcação de tarefa concluída:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -92,7 +92,7 @@ cy.get('[data-testid="todo-item-label"]').should('contain', 'Tarefa concluida')
 4. Marca todas as tarefas como concluídas usando o comando `.click()`
 5. Verifica se o contador de itens restantes exibe '0 items left!' utilizando `.should()`
 
-Aqui está o código desenvolvido para marcação de todas as tarefas concluídas:
+Aqui está o código desenvolvido para teste de marcação de todas as tarefas concluídas:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -113,7 +113,7 @@ cy.get('[data-testid="footer"]').should('contain.text','0 items left!')
 4. Clica no botão de limpar tarefas concluídas usando `.click()`
 5. Verifica se a tarefa concluída não está mais presente na lista utilizando o comando `.should()`
 
-Aqui está o código desenvolvido para limpeza de tarefas concluída:
+Aqui está o código desenvolvido para teste de limpeza de tarefas concluída:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -135,7 +135,7 @@ cy.get('.completed > .view > [data-testid="todo-item-label"]').should('not.exist
 5. Verifica se o contador de itens restantes exibe '1 item left!' utilizando `.should()`
 6. Verifica se a tarefa concluída está presente na lista de tarefas concluídas usando `.should()`
 
-Aqui está o código desenvolvido para filtragem de tarefas:
+Aqui está o código desenvolvido para teste de filtragem de tarefas:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
@@ -155,7 +155,7 @@ cy.get('[data-testid="todo-item-label"]').should('contain', 'Tarefa 1')
 2. Pressiona a tecla 'Enter' sem inserir texto no campo de texto
 3. Verifica se nenhuma tarefa é adicionada à lista utilizando `.should()`
 
-Aqui está o código desenvolvido para adicionar uma tarefa em branco:
+Aqui está o código desenvolvido para realizar teste para adicionar uma tarefa em branco:
 
 ```Javascript
 cy.visit('https://todomvc.com/examples/react/dist/')
