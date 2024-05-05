@@ -5,9 +5,22 @@
 - Elaborado por: Iza Lopes.
 
 ## Exercicio01 - ListaCypress:
-Projeto desenvolvido para realizar a testes de UI no website [Todo.MVC](https://todomvc.com/examples/react/dist/)
 
-<img align="center" alt="picture" width="500em" src="https://github.com/Izalp/Izalp/assets/102091381/7d46528e-2c50-45e9-a0f3-3a3fbbb9e24b">
+Projeto desenvolvido para realizar testes de UI no website [Todo.MVC](https://todomvc.com/examples/react/dist/) utilizando a ferramenta de automação de teste frontend [Cypress](https://www.cypress.io/)
+
+<div align="center">
+  <img align="center" alt="picture" width="500em" src="https://github.com/Izalp/Izalp/assets/102091381/7d46528e-2c50-45e9-a0f3-3a3fbbb9e24b">
+</div>
+
+<br>
+
+<div align="right">
+  <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e">
+  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
+</div>
+
 
 ## Sumário:
 1. [Cenário de teste](#cenário-de-teste)
@@ -185,7 +198,7 @@ npm install cypress
 
 ## Relatório de testes 
 
-Para gerar o relatório de testes pelo Mochawesome:
+O relatório de testes gerado pelo Mochawesome oferece uma visão abrangente da execução dos testes, permitindo uma análise detalhada dos resultados. Para gerar o relatório de testes pelo Mochawesome:
 
 - Instale a dependência pelo comando:
 
@@ -193,8 +206,17 @@ Para gerar o relatório de testes pelo Mochawesome:
 npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 ```
 
-- Para exibir o relatório de testes no terminal e gerar o html do relatorio, execute um dos comandos a seguir:
+- Para exibir o relatório de testes no terminal, execute o comando a seguir:
 
 ```
 ./node_modules/.bin/cypress run --spec 'cypress/e2e/Exercicio01.cy.js/'
 ```
+
+Ao executar este comando, será gerado um arquivo `index.html` contendo o relatório do Exercicio01.
+
+- Para exibir o relatório de testes pelo navegador, execute o comando a seguir no terminal:
+
+```
+cd cypress/reports/html ; start index.html
+```
+
