@@ -37,13 +37,31 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{URL}}users?page=2",
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
 							"host": [
-								"{{URL}}users"
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
 							],
 							"query": [
 								{
@@ -101,9 +119,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}users",
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
 							"host": [
-								"{{URL}}users"
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
 							]
 						}
 					},
@@ -142,9 +166,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}register",
+							"raw": "https://reqres.in/api/register",
+							"protocol": "https",
 							"host": [
-								"{{URL}}register"
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register"
 							]
 						}
 					},
@@ -192,11 +222,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}users/58",
+							"raw": "https://reqres.in/api/users/58",
+							"protocol": "https",
 							"host": [
-								"{{URL}}users"
+								"reqres",
+								"in"
 							],
 							"path": [
+								"api",
+								"users",
 								"58"
 							]
 						}
@@ -223,7 +257,7 @@
 									"    pm.expect(pm.response.text()).to.equal('');\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"pm.test(\"Response time is less than 600ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 									"});\r",
 									"\r",
@@ -240,11 +274,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}users/58",
+							"raw": "https://reqres.in/api/users/58",
+							"protocol": "https",
 							"host": [
-								"{{URL}}users"
+								"reqres",
+								"in"
 							],
 							"path": [
+								"api",
+								"users",
 								"58"
 							]
 						}
