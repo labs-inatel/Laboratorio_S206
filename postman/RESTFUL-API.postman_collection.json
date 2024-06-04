@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "4067a015-e348-401a-b87a-6784674fa243",
-		"name": "REST-API",
+		"name": "RESTFUL-API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34762953"
 	},
@@ -18,6 +18,18 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is application/json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is a valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -64,7 +76,25 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).not.eql(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is in JSON format\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned object IDs match requested IDs\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var requestedIds = [3, 5, 10];\r",
+									"    var returnedIds = jsonData.map(function (obj) {\r",
+									"        return parseInt(obj.id);\r",
+									"    });\r",
+									"    pm.expect(returnedIds).to.include.members(requestedIds);\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -102,6 +132,62 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetSingleObject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should be valid JSON\", function () {\r",
+									"    pm.response.to.have.jsonBody();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify content type is JSON\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.restful-api.dev/objects/7",
+							"protocol": "https",
+							"host": [
+								"api",
+								"restful-api",
+								"dev"
+							],
+							"path": [
+								"objects",
+								"7"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -117,7 +203,20 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"Capture object ID\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.environment.set(\"objectId\", jsonData.id);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is a JSON object\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -165,7 +264,18 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"Response should have a JSON content type\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Handle errors properly\", function () {\r",
+									"    if (pm.response.code !== 200) {\r",
+									"        pm.expect(pm.response.json().error).to.exist;\r",
+									"    }\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -185,7 +295,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://api.restful-api.dev/objects/ff8081818fb998eb018fe073f4a53c5f",
+							"raw": "https://api.restful-api.dev/objects/{{objectId}}",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -194,7 +304,7 @@
 							],
 							"path": [
 								"objects",
-								"ff8081818fb998eb018fe073f4a53c5f"
+								"{{objectId}}"
 							]
 						}
 					},
@@ -214,6 +324,16 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should have a JSON content type\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Handle errors properly\", function () {\r",
+									"    if (pm.response.code !== 200) {\r",
+									"        pm.expect(pm.response.json().error).to.exist;\r",
+									"    }\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -221,15 +341,12 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Apple MacBook Pro 16 (Updated Name)\"\r\n}",
+							"raw": "{\r\n   \"name\": \"Apple MacBook Pro 17\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +354,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://api.restful-api.dev/objects/ff8081818fb998eb018fe073f4a53c5f",
+							"raw": "https://api.restful-api.dev/objects/{{objectId}}",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -246,7 +363,7 @@
 							],
 							"path": [
 								"objects",
-								"ff8081818fb998eb018fe073f4a53c5f"
+								"{{objectId}}"
 							]
 						}
 					},
@@ -264,9 +381,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
+									"pm.test(\"Verify delete operation\", function () {\r",
+									"    if (pm.response.code === 200) {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    } else if (pm.response.code === 404) {\r",
+									"        pm.response.to.have.status(404);\r",
+									"    } else {\r",
+									"        pm.expect.fail(\"Unexpected response status: \" + pm.response.code);\r",
+									"    }\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -274,10 +398,10 @@
 						}
 					],
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://api.restful-api.dev/objects/6",
+							"raw": "https://api.restful-api.dev/objects/{{objectId}}",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -286,7 +410,7 @@
 							],
 							"path": [
 								"objects",
-								"6"
+								"{{objectId}}"
 							]
 						}
 					},
