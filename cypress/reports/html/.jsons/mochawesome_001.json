@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-04T13:24:42.317Z",
+    "end": "2024-05-04T13:25:02.877Z",
+    "duration": 20560,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7435ef5f-4aa7-42f4-a401-30e97d2947ab",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ExemploAula3.cy.js",
+      "file": "cypress\\e2e\\ExemploAula3.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ecd083df-1896-4e5a-b1b3-a287255f5f2c",
+          "title": "Testes de criação, registro e login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Teste de criação de usuário com sucesso",
+              "fullTitle": "Testes de criação, registro e login Teste de criação de usuário com sucesso",
+              "timedOut": null,
+              "duration": 4734,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/login');\ncy.get('.btn-link').click();\ncy.get('#firstName').type(\"Iza\");\ncy.get('#Text1').type(\"Lopes\");\ncy.get('#username').type(\"Iza\");\ncy.get('#password').type(\"123\");\ncy.get('.btn-primary').click();\ncy.get('.ng-binding').should(\"contain.text\", \"Registration successful\");",
+              "err": {},
+              "uuid": "e1887330-9e45-4057-afab-1806d621c855",
+              "parentUUID": "ecd083df-1896-4e5a-b1b3-a287255f5f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de criação de usuário com falha",
+              "fullTitle": "Testes de criação, registro e login Teste de criação de usuário com falha",
+              "timedOut": null,
+              "duration": 1382,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/login');\ncy.get('.btn-link').click();\ncy.get('#firstName').type(\"Iza\");\ncy.get('#Text1').type(\"Lopes\");\ncy.get('#username').type(\"Iza\");\ncy.get('.btn-primary').should(\"be.disabled\");",
+              "err": {},
+              "uuid": "81d5f633-d729-4317-99c8-5253ac82184a",
+              "parentUUID": "ecd083df-1896-4e5a-b1b3-a287255f5f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de login com sucesso",
+              "fullTitle": "Testes de criação, registro e login Teste de login com sucesso",
+              "timedOut": null,
+              "duration": 4859,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = createUser();\ncy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/login');\ncy.get('#username').type(info[0]);\ncy.get('#password').type(info[1]);\ncy.get('.btn-primary').click();\ncy.get('h1.ng-binding').should(\"contain.text\", info[0]);",
+              "err": {},
+              "uuid": "8853da4d-e66a-42ba-bf50-2d16699cfb8f",
+              "parentUUID": "ecd083df-1896-4e5a-b1b3-a287255f5f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete do user com sucesso",
+              "fullTitle": "Testes de criação, registro e login Delete do user com sucesso",
+              "timedOut": null,
+              "duration": 7127,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = createUser();\ncy.login(info[0], info[1]);\ncy.get('.ng-binding > a').click();\ncy.get('.btn');\ncy.login(info[0], info[1]);\ncy.get('.ng-binding').should(\"have.text\", \"Username or password is incorrect\");",
+              "err": {},
+              "uuid": "3d133897-6cbf-4671-a608-0e3cb0a3477c",
+              "parentUUID": "ecd083df-1896-4e5a-b1b3-a287255f5f2c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1887330-9e45-4057-afab-1806d621c855",
+            "81d5f633-d729-4317-99c8-5253ac82184a",
+            "8853da4d-e66a-42ba-bf50-2d16699cfb8f",
+            "3d133897-6cbf-4671-a608-0e3cb0a3477c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
