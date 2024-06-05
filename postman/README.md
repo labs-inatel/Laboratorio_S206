@@ -200,4 +200,4 @@ npm install -g newman-reporter-htmlextra
 newman run "RESTFUL-API.postman.collection.json" -r htmlextra
 ```
 
-Ao executar este comando, será gerado um arquivo ```RESTFUL-API-data-horario-id.html``` contendo o relatório de testes do Exercicio02.
+Ao executar este comando, será gerado um arquivo ```RESTFUL-API-data-horario-ID.html``` contendo o relatório de testes do Exercicio02.
