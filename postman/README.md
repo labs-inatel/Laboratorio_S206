@@ -186,7 +186,7 @@ Link para download direto: https://nodejs.org/en/download/prebuilt-installer
 
 ## Relatório de testes
 
-O relatório de testes gerado pelo Newman oferece uma visão abrangente da execução dos testes, permitindo uma análise detalhada dos resultados. Para gerar o relatório de testes pelo Newman:
+O relatório de testes gerado pelo [Newman](https://www.npmjs.com/package/newman-reporter-htmlextra) oferece uma visão abrangente da execução dos testes, permitindo uma análise detalhada dos resultados. Para gerar o relatório de testes pelo [Newman](https://www.npmjs.com/package/newman-reporter-htmlextra):
 
 - Instale a dependência pelo comando:
 
@@ -194,10 +194,10 @@ O relatório de testes gerado pelo Newman oferece uma visão abrangente da execu
 npm install -g newman-reporter-htmlextra
 ```
 
-- Para exibir o relatório de testes pelo navegador, no terminal, execute o comando a seguir dentro da pasta _postman_:
+- Para exibir o relatório de testes pelo navegador, no terminal, execute o comando a seguir dentro da pasta __postman__:
 
 ```
 newman run "RESTFUL-API.postman.collection.json" -r htmlextra
 ```
 
-Ao executar este comando, será gerado um arquivo RESTFUL-API-data.html contendo o relatório de testes do Exercicio02.
+Ao executar este comando, será gerado um arquivo ```RESTFUL-API-data-horario-id.html``` contendo o relatório de testes do Exercicio02.
