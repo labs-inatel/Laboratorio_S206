@@ -97,7 +97,7 @@ cd selenium
 
 3. Execute o script Python:
 ```
-pytest test_login.py
+pytest tests/site/test_login.py
 ```
 
 4. Para gerar o relatório de testes, execute o comando abaixo:
