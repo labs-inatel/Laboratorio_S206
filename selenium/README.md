@@ -22,6 +22,13 @@ Este é um simples script em Python usando o Selenium para automatizar o process
   <img align="center" alt="picture" width="700em" src="https://github.com/Izalp/Laboratorio_S206/assets/102091381/87ec27a7-a35b-4556-a813-a153f2ebe3f1">
 </div>
 
+## Sumário:
+
+1. [Funcionamento do Script](#funcionamento-do-script)
+2. [Pré-requisitos](#pré-requisitos)
+3. [Instalação](#instalação)
+4. [Como executar](#como-executar)
+
 ## Funcionamento do Script
 
 1. Teste de Login de usuário inválido:
@@ -34,7 +41,7 @@ Este é um simples script em Python usando o Selenium para automatizar o process
 - Aguarda 2 segundos para permitir o carregamento da página.
 - Localiza e verifica a mensagem de alerta na tela.
 
-## Requisitos
+## Pré-requisitos
 
 - Python 3.x
 - Biblioteca Selenium
