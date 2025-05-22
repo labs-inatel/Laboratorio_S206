@@ -1,6 +1,14 @@
 # S206 - Qualidade de Software
 
-Este repositório reúne os projetos e exercícios desenvolvidos ao longo da disciplina **S206 - Qualidade de Software**. O foco está na aplicação prática de técnicas e ferramentas de teste de software, com ênfase em testes automatizados de interface e integração.
+![Testes: Cypress](https://img.shields.io/badge/testes-Cypress-6e5494?logo=cypress)
+![Testes: Selenium](https://img.shields.io/badge/testes-Selenium-43B02A?logo=selenium)
+![Testes: Postman](https://img.shields.io/badge/testes-Postman-FF6C37?logo=postman)
+![Feito com: Python](https://img.shields.io/badge/feito%20com-Python-3776AB?logo=python)
+![Feito com: JavaScript](https://img.shields.io/badge/feito%20com-JavaScript-F7DF1E?logo=javascript)
+
+Este repositório reúne os projetos e exercícios desenvolvidos ao longo da disciplina **S206 - Qualidade de Software**. 
+
+O foco está na aplicação prática de técnicas e ferramentas de teste de software, com ênfase em testes automatizados de interface e integração.
 
 ## Projetos Desenvolvidos
 
